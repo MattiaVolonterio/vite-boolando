@@ -148,6 +148,10 @@ main {
 
       background-color: white;
       text-align: center;
+
+      &:hover {
+        color: red;
+      }
     }
 
     &:hover {
@@ -156,9 +160,6 @@ main {
       }
       .hover-img {
         display: block;
-      }
-      .heart {
-        color: red;
       }
     }
 
