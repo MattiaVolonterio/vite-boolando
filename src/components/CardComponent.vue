@@ -8,12 +8,16 @@ export default {
     getImagePath(image) {
       return new URL(`../assets/img/${image}`, import.meta.url).href;
     },
+
+    toggleFavourite() {
+      this.cardInfo.isFavourite = !this.cardInfo.isFavourite;
+    },
   },
 };
 </script>
 
 <template>
-  <div class="card">
+  <div @click="toggleFavourite()" class="card">
     <div class="image-container">
       <img :src="getImagePath(cardInfo.imgUrl)" alt="image" class="base-img" />
       <img
@@ -29,7 +33,9 @@ export default {
           {{ cardInfo.badge.sostenibility }}
         </div>
       </div>
-      <div class="heart">&hearts;</div>
+      <div class="heart" :class="cardInfo.isFavourite ? 'isFavoutite' : ''">
+        &hearts;
+      </div>
     </div>
     <div class="image-description">
       <span class="subtitle">{{ cardInfo.subtitle }}</span>
@@ -63,7 +69,7 @@ export default {
       background-color: white;
       text-align: center;
 
-      &:hover {
+      &.isFavoutite {
         color: red;
       }
     }

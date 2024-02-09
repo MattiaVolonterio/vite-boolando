@@ -6,6 +6,27 @@ import AppFooter from "./components/AppFooter.vue";
 export default {
   data() {
     return {
+      headerSelections: [
+        {
+          name: "Donna",
+          href: "#",
+        },
+        {
+          name: "Uomo",
+          href: "#",
+        },
+        {
+          name: "Bambino",
+          href: "#",
+        },
+      ],
+
+      headerIcons: [
+        "fa-regular fa-user",
+        "fa-regular fa-heart",
+        "fa-solid fa-bag-shopping",
+      ],
+
       cards: [
         {
           id: 1,
@@ -21,6 +42,7 @@ export default {
             isSostenible: true,
             sostenibility: "Sostenibilità",
           },
+          isFavourite: false,
         },
         {
           id: 2,
@@ -36,6 +58,7 @@ export default {
             isSostenible: false,
             sostenibility: "",
           },
+          isFavourite: false,
         },
         {
           id: 3,
@@ -51,6 +74,7 @@ export default {
             isSostenible: false,
             sostenibility: "",
           },
+          isFavourite: false,
         },
         {
           id: 4,
@@ -66,6 +90,7 @@ export default {
             isSostenible: true,
             sostenibility: "Sostenibilità",
           },
+          isFavourite: false,
         },
         {
           id: 5,
@@ -81,6 +106,7 @@ export default {
             isSostenible: false,
             sostenibility: "",
           },
+          isFavourite: false,
         },
         {
           id: 6,
@@ -96,6 +122,7 @@ export default {
             isSostenible: true,
             sostenibility: "Sostenibilità",
           },
+          isFavourite: false,
         },
       ],
     };
@@ -106,7 +133,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader></AppHeader>
+  <AppHeader :selections="headerSelections" :icons="headerIcons"></AppHeader>
   <AppMainContent :cardsArray="cards"></AppMainContent>
   <AppFooter></AppFooter>
 </template>

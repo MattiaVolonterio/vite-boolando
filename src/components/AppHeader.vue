@@ -1,28 +1,8 @@
 <script>
 export default {
-  data() {
-    return {
-      selections: [
-        {
-          name: "Donna",
-          href: "#",
-        },
-        {
-          name: "Uomo",
-          href: "#",
-        },
-        {
-          name: "Bambino",
-          href: "#",
-        },
-      ],
-
-      icons: [
-        "fa-regular fa-user",
-        "fa-regular fa-heart",
-        "fa-solid fa-bag-shopping",
-      ],
-    };
+  props: {
+    selections: Array,
+    icons: Array,
   },
 };
 </script>
