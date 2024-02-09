@@ -16,11 +16,21 @@ export default {};
       <div class="right">
         <span>Trovaci anche su:</span>
         <ul>
-          <li><a href="#"></a><i class="fa-brands fa-square-twitter"></i></li>
-          <li><a href="#"></a><i class="fa-brands fa-square-facebook"></i></li>
-          <li><a href="#"></a><i class="fa-brands fa-square-instagram"></i></li>
-          <li><a href="#"></a><i class="fa-brands fa-square-pinterest"></i></li>
-          <li><a href="#"></a><i class="fa-brands fa-square-youtube"></i></li>
+          <li>
+            <a href="#"> <i class="fa-brands fa-square-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"> <i class="fa-brands fa-square-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-square-instagram"></i> </a>
+          </li>
+          <li>
+            <a href="#"> <i class="fa-brands fa-square-pinterest"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-square-youtube"></i> </a>
+          </li>
         </ul>
       </div>
     </div>
