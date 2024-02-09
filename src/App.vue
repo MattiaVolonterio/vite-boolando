@@ -10,14 +10,17 @@ export default {
         {
           name: "Donna",
           href: "#",
+          isActive: true,
         },
         {
           name: "Uomo",
           href: "#",
+          isActive: false,
         },
         {
           name: "Bambino",
           href: "#",
+          isActive: false,
         },
       ],
 

@@ -12,7 +12,10 @@ export default {
     <div class="container">
       <div class="selections">
         <ul>
-          <li v-for="selection in selections">
+          <li
+            v-for="selection in selections"
+            :class="selection.isActive ? 'active' : ''"
+          >
             <a :href="selection.href">{{ selection.name }}</a>
           </li>
         </ul>
@@ -36,25 +39,37 @@ export default {
 
 header {
   background-color: #e97630;
-}
 
-.container {
-  @include space-between;
+  .container {
+    @include space-between;
 
-  height: 70px;
-}
+    height: 70px;
 
-img {
-  height: 30px;
-}
+    .selections {
+      ul {
+        li {
+          &.active {
+            font-size: 1.2rem;
+            text-shadow: -2px 0px greenyellow;
+            color: black;
+          }
+        }
+      }
+    }
+  }
 
-.icons {
-  li {
-    font-size: 1rem;
-    margin-right: 0;
-    margin-left: 10px;
+  img {
+    height: 30px;
+  }
 
-    cursor: pointer;
+  .icons {
+    li {
+      font-size: 1rem;
+      margin-right: 0;
+      margin-left: 10px;
+
+      cursor: pointer;
+    }
   }
 }
 </style>
