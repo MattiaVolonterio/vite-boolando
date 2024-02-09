@@ -34,15 +34,14 @@ export default {
           imgUrlHover: "1b.webp",
           subtitle: "Levi's",
           title: "RELAXED FIT TEE UNISEX",
-          discountPrice: "14,99 €",
-          realPrice: "29,99 €",
+          price: 29.99,
           badge: {
             isInDiscount: true,
             discountPerc: "-50%",
             isSostenible: true,
             sostenibility: "Sostenibilità",
           },
-          isFavourite: false,
+          isInFavourite: false,
         },
         {
           id: 2,
@@ -50,15 +49,14 @@ export default {
           imgUrlHover: "2b.webp",
           subtitle: "Guess",
           title: "ROSES TEE",
-          discountPrice: "20,99 €",
-          realPrice: "29,99 €",
+          price: 29.99,
           badge: {
             isInDiscount: true,
             discountPerc: "-30%",
             isSostenible: false,
             sostenibility: "",
           },
-          isFavourite: false,
+          isInFavourite: false,
         },
         {
           id: 3,
@@ -66,15 +64,14 @@ export default {
           imgUrlHover: "3b.webp",
           subtitle: "Come Zucchero Filato",
           title: "VOGLIA DI COLORI PASTELLO",
-          discountPrice: "129,99 €",
-          realPrice: "184,99 €",
+          price: 184.99,
           badge: {
             isInDiscount: true,
             discountPerc: "-30%",
             isSostenible: false,
             sostenibility: "",
           },
-          isFavourite: false,
+          isInFavourite: false,
         },
         {
           id: 4,
@@ -82,15 +79,14 @@ export default {
           imgUrlHover: "4b.webp",
           subtitle: "Levi's",
           title: "TEE UNISEX",
-          discountPrice: "14,99 €",
-          realPrice: "29,99 €",
+          price: 29.99,
           badge: {
             isInDiscount: true,
             discountPerc: "-50%",
             isSostenible: true,
             sostenibility: "Sostenibilità",
           },
-          isFavourite: false,
+          isInFavourite: false,
         },
         {
           id: 5,
@@ -98,15 +94,14 @@ export default {
           imgUrlHover: "5b.webp",
           subtitle: "Maya Deluxe",
           title: "STRIPE BODICE",
-          discountPrice: "99,99 €",
-          realPrice: "",
+          price: 99.99,
           badge: {
             isInDiscount: false,
             discountPerc: "",
             isSostenible: false,
             sostenibility: "",
           },
-          isFavourite: false,
+          isInFavourite: false,
         },
         {
           id: 6,
@@ -114,16 +109,42 @@ export default {
           imgUrlHover: "6b.webp",
           subtitle: "Esprit",
           title: "MAGLIONE - BLACK",
-          discountPrice: "29,99 €",
-          realPrice: "",
+          price: 29.99,
           badge: {
             isInDiscount: false,
             discountPerc: "",
             isSostenible: true,
             sostenibility: "Sostenibilità",
           },
-          isFavourite: false,
+          isInFavourite: false,
         },
+      ],
+
+      footerLeftTitle: "Boolando s.r.l.",
+
+      footerRightTitle: "Trovaci anche su: ",
+
+      footerSelections: [
+        {
+          name: "Informazioni legali",
+          href: "#",
+        },
+        {
+          name: "Informativa sulla privacy",
+          href: "#",
+        },
+        {
+          name: "Diritto di recesso",
+          href: "#",
+        },
+      ],
+
+      footerIcons: [
+        "fa-brands fa-square-twitter",
+        "fa-brands fa-square-facebook",
+        "fa-brands fa-square-instagram",
+        "fa-brands fa-square-pinterest",
+        "fa-brands fa-square-youtube",
       ],
     };
   },
@@ -133,9 +154,17 @@ export default {
 </script>
 
 <template>
-  <AppHeader :selections="headerSelections" :icons="headerIcons"></AppHeader>
+  <AppHeader
+    :selections="headerSelections"
+    :headerIcons="headerIcons"
+  ></AppHeader>
   <AppMainContent :cardsArray="cards"></AppMainContent>
-  <AppFooter></AppFooter>
+  <AppFooter
+    :footerLeftTitle="footerLeftTitle"
+    :footerRightTitle="footerRightTitle"
+    :footerSelections="footerSelections"
+    :footerIcons="footerIcons"
+  ></AppFooter>
 </template>
 
 <style lang="scss">

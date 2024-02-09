@@ -4,13 +4,32 @@ export default {
     cardInfo: Object,
   },
 
+  computed: {
+    discountPrice() {
+      let discountedPrice = 0;
+      if (this.cardInfo.badge.isInDiscount) {
+        const discountPerc = parseInt(
+          this.cardInfo.badge.discountPerc.slice(
+            1,
+            this.cardInfo.badge.discountPerc.length
+          )
+        );
+        const discount = (this.cardInfo.price * discountPerc) / 100;
+        discountedPrice = (this.cardInfo.price - discount).toFixed(2);
+      } else {
+        discountedPrice = this.cardInfo.price;
+      }
+      return discountedPrice;
+    },
+  },
+
   methods: {
     getImagePath(image) {
       return new URL(`../assets/img/${image}`, import.meta.url).href;
     },
 
     toggleFavourite() {
-      this.cardInfo.isFavourite = !this.cardInfo.isFavourite;
+      this.cardInfo.isInFavourite = !this.cardInfo.isInFavourite;
     },
   },
 };
@@ -33,15 +52,17 @@ export default {
           {{ cardInfo.badge.sostenibility }}
         </div>
       </div>
-      <div class="heart" :class="cardInfo.isFavourite ? 'isFavoutite' : ''">
+      <div class="heart" :class="cardInfo.isInFavourite ? 'isFavoutite' : ''">
         &hearts;
       </div>
     </div>
     <div class="image-description">
       <span class="subtitle">{{ cardInfo.subtitle }}</span>
       <p class="title">{{ cardInfo.title }}</p>
-      <span class="discount-price">{{ cardInfo.discountPrice }}</span>
-      <span class="real-price">{{ cardInfo.realPrice }}</span>
+      <span class="discount-price">{{ discountPrice + " €" }}</span>
+      <span v-if="cardInfo.badge.isInDiscount" class="real-price">{{
+        cardInfo.price + " €"
+      }}</span>
     </div>
   </div>
 </template>

@@ -2,7 +2,7 @@
 export default {
   props: {
     selections: Array,
-    icons: Array,
+    headerIcons: Array,
   },
 };
 </script>
@@ -22,7 +22,7 @@ export default {
       </div>
       <div class="icons">
         <ul>
-          <li v-for="icon in icons" :class="icon"></li>
+          <li v-for="icon in headerIcons" :class="icon"></li>
         </ul>
       </div>
     </div>

@@ -1,35 +1,30 @@
 <script>
-export default {};
+export default {
+  props: {
+    footerLeftTitle: String,
+    footerRightTitle: String,
+    footerSelections: Array,
+    footerIcons: Array,
+  },
+};
 </script>
 
 <template>
   <footer>
     <div class="container">
       <div class="left">
-        <span>Boolando s.r.l.</span>
+        <span>{{ footerLeftTitle }}</span>
         <ul>
-          <li><a href="#">Informazioni legali</a></li>
-          <li><a href="#">Informativa sulla privacy</a></li>
-          <li><a href="#">Diritto di recesso</a></li>
+          <li v-for="selection in footerSelections">
+            <a :href="selection.href">{{ selection.name }}</a>
+          </li>
         </ul>
       </div>
       <div class="right">
-        <span>Trovaci anche su:</span>
+        <span>{{ footerRightTitle }}</span>
         <ul>
-          <li>
-            <a href="#"> <i class="fa-brands fa-square-twitter"></i></a>
-          </li>
-          <li>
-            <a href="#"> <i class="fa-brands fa-square-facebook"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-square-instagram"></i> </a>
-          </li>
-          <li>
-            <a href="#"> <i class="fa-brands fa-square-pinterest"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-square-youtube"></i> </a>
+          <li v-for="icon in footerIcons">
+            <a href="#"> <i :class="icon"></i></a>
           </li>
         </ul>
       </div>
