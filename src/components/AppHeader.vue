@@ -22,7 +22,9 @@ export default {
       </div>
       <div class="icons">
         <ul>
-          <li v-for="icon in headerIcons" :class="icon"></li>
+          <li v-for="icon in headerIcons">
+            <font-awesome-icon :icon="icon" />
+          </li>
         </ul>
       </div>
     </div>

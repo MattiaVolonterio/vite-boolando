@@ -24,7 +24,7 @@ export default {
         <span>{{ footerRightTitle }}</span>
         <ul>
           <li v-for="icon in footerIcons">
-            <a href="#"> <i :class="icon"></i></a>
+            <a href="#"> <font-awesome-icon :icon="icon" /></a>
           </li>
         </ul>
       </div>
