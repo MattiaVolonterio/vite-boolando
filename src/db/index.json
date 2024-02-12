@@ -1,0 +1,133 @@
+{
+  "headerSelections": [
+    {
+      "id": 1,
+      "name": "Donna",
+      "href": "#",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "name": "Uomo",
+      "href": "#",
+      "isActive": false
+    },
+    {
+      "id": 3,
+      "name": "Bambino",
+      "href": "#",
+      "isActive": false
+    }
+  ],
+
+  "cards": [
+    {
+      "id": 1,
+      "imgUrl": "1.webp",
+      "imgUrlHover": "1b.webp",
+      "subtitle": "Levi's",
+      "title": "RELAXED FIT TEE UNISEX",
+      "price": 29.99,
+      "badge": {
+        "isInDiscount": true,
+        "discountPerc": "-50%",
+        "isSostenible": true,
+        "sostenibility": "Sostenibilità"
+      },
+      "isInFavourite": false
+    },
+    {
+      "id": 2,
+      "imgUrl": "2.webp",
+      "imgUrlHover": "2b.webp",
+      "subtitle": "Guess",
+      "title": "ROSES TEE",
+      "price": 29.99,
+      "badge": {
+        "isInDiscount": true,
+        "discountPerc": "-30%",
+        "isSostenible": false,
+        "sostenibility": ""
+      },
+      "isInFavourite": false
+    },
+    {
+      "id": 3,
+      "imgUrl": "3.webp",
+      "imgUrlHover": "3b.webp",
+      "subtitle": "Come Zucchero Filato",
+      "title": "VOGLIA DI COLORI PASTELLO",
+      "price": 184.99,
+      "badge": {
+        "isInDiscount": true,
+        "discountPerc": "-30%",
+        "isSostenible": false,
+        "sostenibility": ""
+      },
+      "isInFavourite": false
+    },
+    {
+      "id": 4,
+      "imgUrl": "4.webp",
+      "imgUrlHover": "4b.webp",
+      "subtitle": "Levi's",
+      "title": "TEE UNISEX",
+      "price": 29.99,
+      "badge": {
+        "isInDiscount": true,
+        "discountPerc": "-50%",
+        "isSostenible": true,
+        "sostenibility": "Sostenibilità"
+      },
+      "isInFavourite": false
+    },
+    {
+      "id": 5,
+      "imgUrl": "5.webp",
+      "imgUrlHover": "5b.webp",
+      "subtitle": "Maya Deluxe",
+      "title": "STRIPE BODICE",
+      "price": 99.99,
+      "badge": {
+        "isInDiscount": false,
+        "discountPerc": "",
+        "isSostenible": false,
+        "sostenibility": ""
+      },
+      "isInFavourite": false
+    },
+    {
+      "id": 6,
+      "imgUrl": "6.webp",
+      "imgUrlHover": "6b.webp",
+      "subtitle": "Esprit",
+      "title": "MAGLIONE - BLACK",
+      "price": 29.99,
+      "badge": {
+        "isInDiscount": false,
+        "discountPerc": "",
+        "isSostenible": true,
+        "sostenibility": "Sostenibilità"
+      },
+      "isInFavourite": false
+    }
+  ],
+
+  "footerSelections": [
+    {
+      "id": 1,
+      "name": "Informazioni legali",
+      "href": "#"
+    },
+    {
+      "id": 2,
+      "name": "Informativa sulla privacy",
+      "href": "#"
+    },
+    {
+      "id": 3,
+      "name": "Diritto di recesso",
+      "href": "#"
+    }
+  ]
+}
