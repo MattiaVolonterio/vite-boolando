@@ -1,5 +1,21 @@
 <script>
+import { store } from "../store";
+
 export default {
+  data() {
+    return {
+      store,
+    };
+  },
+
+  methods: {
+    checkSelectedIndex(index) {
+      store.headerSelections[store.headerSelIndex].isActive = false;
+      store.headerSelIndex = index;
+      store.headerSelections[store.headerSelIndex].isActive = true;
+    },
+  },
+
   props: {
     selections: Array,
     headerIcons: Array,
@@ -13,7 +29,8 @@ export default {
       <div class="selections">
         <ul>
           <li
-            v-for="selection in selections"
+            v-for="(selection, index) in selections"
+            @click="checkSelectedIndex(index)"
             :class="selection.isActive ? 'active' : ''"
           >
             <a :href="selection.href">{{ selection.name }}</a>
@@ -49,7 +66,6 @@ header {
       ul {
         li {
           &.active {
-            font-size: 1.2rem;
             text-shadow: -2px 0px greenyellow;
             color: black;
           }
