@@ -9,5 +9,12 @@ export const store = reactive({
 
   modal: {
     isShown: false,
+    imageURL: "",
+    brand: "",
+    description: "",
+    isInDiscount: false,
+    discountValue: "",
+    price: "",
+    discountPrice: "",
   },
 });

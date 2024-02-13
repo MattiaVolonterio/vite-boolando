@@ -3,6 +3,10 @@ import CardComponent from "./CardComponent.vue";
 import { store } from "../store";
 
 export default {
+  data() {
+    return { store };
+  },
+
   props: {
     cardsArray: Array,
   },
@@ -10,8 +14,23 @@ export default {
   emits: ["show-modal"],
 
   methods: {
-    requestModalShow() {
+    requestModalShow(
+      subtitle,
+      title,
+      isInDiscount,
+      discountPerc,
+      price,
+      discountPrice,
+      url
+    ) {
       this.$emit("show-modal");
+      store.modal.imageURL = url;
+      store.modal.brand = subtitle;
+      store.modal.description = title;
+      store.modal.isInDiscount = isInDiscount;
+      store.modal.discountValue = discountPerc;
+      store.modal.price = price;
+      store.modal.discountPrice = discountPrice;
     },
   },
 
@@ -23,10 +42,11 @@ export default {
   <main>
     <div class="container">
       <div class="row">
-        <div v-for="card in cardsArray" class="col-4">
+        <div v-for="(card, index) in cardsArray" class="col-4">
           <CardComponent
             @request-modal-show="requestModalShow"
             :cardInfo="card"
+            :cardIndex="index"
           ></CardComponent>
         </div>
       </div>

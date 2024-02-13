@@ -60,7 +60,21 @@ export default {
     </div>
     <div class="image-description">
       <span class="subtitle">{{ cardInfo.subtitle }}</span>
-      <p @click="$emit('request-modal-show')" class="title">
+      <p
+        @click="
+          $emit(
+            'request-modal-show',
+            cardInfo.subtitle,
+            cardInfo.title,
+            cardInfo.badge.isInDiscount,
+            cardInfo.badge.discountPerc,
+            cardInfo.price,
+            discountPrice,
+            getImagePath(cardInfo.imgUrl)
+          )
+        "
+        class="title"
+      >
         {{ cardInfo.title }}
       </p>
       <span class="discount-price">{{ discountPrice + " €" }}</span>
