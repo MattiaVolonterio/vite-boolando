@@ -6,4 +6,8 @@ export const store = reactive({
   headerSelIndex: 0,
   cards: [],
   footerSelections: [],
+
+  modal: {
+    isShown: false,
+  },
 });

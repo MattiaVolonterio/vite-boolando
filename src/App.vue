@@ -2,6 +2,7 @@
 import AppHeader from "./components/AppHeader.vue";
 import AppMainContent from "./components/AppMainContent.vue";
 import AppFooter from "./components/AppFooter.vue";
+import ModalComponent from "./components/ModalComponent.vue";
 import axios from "axios";
 import { store } from "./store";
 
@@ -54,7 +55,7 @@ export default {
     this.fetchCard();
   },
 
-  components: { AppHeader, AppMainContent, AppFooter },
+  components: { AppHeader, AppMainContent, AppFooter, ModalComponent },
 };
 </script>
 
@@ -63,6 +64,7 @@ export default {
     :selections="store.headerSelections"
     :headerIcons="headerIcons"
   ></AppHeader>
+  <ModalComponent v-if="store.modal.isShown"></ModalComponent>
   <AppMainContent :cardsArray="store.cards"></AppMainContent>
   <AppFooter
     :footerLeftTitle="footerLeftTitle"

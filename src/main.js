@@ -15,13 +15,18 @@ import {
   faSquarePinterest,
   faSquareYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { faUser, faHeart } from "@fortawesome/free-regular-svg-icons";
+import {
+  faUser,
+  faHeart,
+  faCircleXmark,
+} from "@fortawesome/free-regular-svg-icons";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
 library.add(
   faUser,
   faHeart,
+  faCircleXmark,
   faBagShopping,
   faSquareTwitter,
   faSquareFacebook,

@@ -4,6 +4,8 @@ export default {
     cardInfo: Object,
   },
 
+  emits: ["show-modal"],
+
   computed: {
     discountPrice() {
       let discountedPrice = 0;
@@ -36,8 +38,8 @@ export default {
 </script>
 
 <template>
-  <div @click="toggleFavourite()" class="card">
-    <div class="image-container">
+  <div class="card">
+    <div @click="toggleFavourite()" class="image-container">
       <img :src="getImagePath(cardInfo.imgUrl)" alt="image" class="base-img" />
       <img
         :src="getImagePath(cardInfo.imgUrlHover)"
@@ -58,7 +60,7 @@ export default {
     </div>
     <div class="image-description">
       <span class="subtitle">{{ cardInfo.subtitle }}</span>
-      <p class="title">{{ cardInfo.title }}</p>
+      <p @click="$emit('show-modal')" class="title">{{ cardInfo.title }}</p>
       <span class="discount-price">{{ discountPrice + " €" }}</span>
       <span v-if="cardInfo.badge.isInDiscount" class="real-price">{{
         cardInfo.price + " €"
@@ -133,6 +135,7 @@ export default {
   .title {
     font-size: 1.2rem;
     font-weight: bold;
+    cursor: pointer;
   }
 
   .discount-price {
