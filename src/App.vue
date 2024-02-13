@@ -47,6 +47,9 @@ export default {
         store.cards = res.data;
       });
     },
+    showModal() {
+      store.modal.isShown = true;
+    },
   },
 
   created() {
@@ -65,7 +68,10 @@ export default {
     :headerIcons="headerIcons"
   ></AppHeader>
   <ModalComponent v-if="store.modal.isShown"></ModalComponent>
-  <AppMainContent :cardsArray="store.cards"></AppMainContent>
+  <AppMainContent
+    @show-modal="showModal"
+    :cardsArray="store.cards"
+  ></AppMainContent>
   <AppFooter
     :footerLeftTitle="footerLeftTitle"
     :footerRightTitle="footerRightTitle"

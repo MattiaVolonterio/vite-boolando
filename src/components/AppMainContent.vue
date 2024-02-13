@@ -7,9 +7,11 @@ export default {
     cardsArray: Array,
   },
 
+  emits: ["show-modal"],
+
   methods: {
-    showModal() {
-      store.modal.isShown = true;
+    requestModalShow() {
+      this.$emit("show-modal");
     },
   },
 
@@ -23,7 +25,7 @@ export default {
       <div class="row">
         <div v-for="card in cardsArray" class="col-4">
           <CardComponent
-            @show-modal="showModal"
+            @request-modal-show="requestModalShow"
             :cardInfo="card"
           ></CardComponent>
         </div>

@@ -4,7 +4,7 @@ export default {
     cardInfo: Object,
   },
 
-  emits: ["show-modal"],
+  emits: ["request-modal-show"],
 
   computed: {
     discountPrice() {
@@ -60,7 +60,9 @@ export default {
     </div>
     <div class="image-description">
       <span class="subtitle">{{ cardInfo.subtitle }}</span>
-      <p @click="$emit('show-modal')" class="title">{{ cardInfo.title }}</p>
+      <p @click="$emit('request-modal-show')" class="title">
+        {{ cardInfo.title }}
+      </p>
       <span class="discount-price">{{ discountPrice + " €" }}</span>
       <span v-if="cardInfo.badge.isInDiscount" class="real-price">{{
         cardInfo.price + " €"
